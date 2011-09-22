@@ -1,0 +1,33 @@
+#wp-postmark-app#
+
+A WordPress plugin that hooks into `wp_mail` to instead use the [Postmarkapp](http://postmarkapp.com) API to send e-mail.
+
+## LIMITATIONS ##
+
+* No support for e-mail attachments or HTML based e-mails...
+
+## INSTALL ##
+
+### ADD IT TO YOUR GIT PROJECT VIA SUBMODULE ###
+
+1. `git submodule add git@github.com:voceconnect/wp-postmark-app.git wp-content/plugins/wp-postmark-app`
+
+### DOWNLOAD PACKAGE ###
+
+1. Download [wp-postmark-app-1.0.tar.gz](https://github.com/downloads/voceconnect/wp-postmark-app/wp-postmark-app-1.0.tar.gz)
+2. Extract to `wp-content/plugins/` .
+3. Add the following constant defines to your wp-config.php file:
+
+        define('POSTMARKAPP_API_KEY', 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX');
+        define('POSTMARKAPP_MAIL_FROM_ADDRESS', 'from_address@mywordpressapp.com');
+        define('POSTMARKAPP_MAIL_FROM_NAME', 'From Address Name');
+
+4. Activate the plugin!
+
+## TODO ##
+
+* Integrate a callback for use with Postmark's bounce hook to display a message to a user on their next login that there are issues with the e-mail address they've provided
+
+## CHANGELOG ##
+
+* 1.0 = initial release

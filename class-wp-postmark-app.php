@@ -12,11 +12,8 @@ class WPPostmarkApp extends PHPMailer {
 	}
 
 	/**
-	 * hooks into phpmailer_init and gets the phpmailer object.
-	 * we'll pull the data we need from the object, then update the object's
-	 * "to:" address to be null, thus causing $phpmailer->send() to fail
-	 * this way we don't send the same message twice - once through postmark,
-	 * and again through phpmailer.
+	 * overrides phpmailer::Send to send via the postmark api.
+	 * we'll pull the data we need from the phpmailer object
 	 *
 	 * @return (boolean) - whether or not sending via postmark api failed...
 	 **/
